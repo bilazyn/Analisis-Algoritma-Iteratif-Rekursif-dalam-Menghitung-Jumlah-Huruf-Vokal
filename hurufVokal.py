@@ -1,14 +1,18 @@
 import time
 import matplotlib.pyplot as plt
+plt.ion()
 
+# cek huruf vokal
 def is_vowel(c):
     return c.lower() in "aiueo"
 
+# rekursif
 def count_vowels_recursive(s, i=0):
     if i >= len(s):
         return 0
     return (1 if is_vowel(s[i]) else 0) + count_vowels_recursive(s, i + 1)
 
+#iteratif
 def count_vowels_iterative(s):
     count = 0
     for ch in s:
@@ -16,6 +20,7 @@ def count_vowels_iterative(s):
             count += 1
     return count
 
+# menampilkan tabel
 def print_table(n_values, rec_times, it_times):
     print("\n+----+------------------------+------------------------+")
     print("| n  |   Recursive Time (s)   |   Iterative Time (s)   |")
@@ -24,8 +29,9 @@ def print_table(n_values, rec_times, it_times):
         print(f"| {n:2d} | {r:<22.12e} | {i:<22.12e} |")
     print("+----+------------------------+------------------------+")
 
+# grafik
 def update_graph(n_values, rec_times, it_times):
-    plt.figure(figsize=(8, 6))
+    plt.clf()
     plt.plot(n_values, rec_times, label="Recursive", marker="o")
     plt.plot(n_values, it_times, label="Iterative", marker="o")
     plt.title("Performance Comparison: Recursive vs Iterative")
@@ -33,11 +39,11 @@ def update_graph(n_values, rec_times, it_times):
     plt.ylabel("Execution Time (seconds)")
     plt.legend()
     plt.grid(True)
-    plt.tight_layout()
-    plt.show()
+    plt.pause(0.1)
 
 print("=== Hitung Huruf Vokal: Rekursif vs Iteratif ===")
 
+# simpan data hasil
 n_values = []
 rec_times = []
 it_times = []
@@ -73,3 +79,6 @@ while True:
         break
 
     kalimat = input("Masukkan kalimat: ")
+
+plt.ioff()
+plt.show()
