@@ -2,8 +2,8 @@
 
 Tugas Besar AKA - Kelompok 8
 1. Nabila Zain (103112400137)
-2. Devi Rahmawati - 103112400088
-3. Rizky Iffat Venardi - 2311102301
+2. Devi Rahmawati (103112400088)
+3. Rizky Iffat Venardi (2311102301)
 
 **Study Case:**
 Studi kasus ini berfokus pada perbandingan algoritma rekursif dan iteratif dalam menghitung jumlah huruf vokal (a, i, u, e, o) pada sebuah kalimat. 
